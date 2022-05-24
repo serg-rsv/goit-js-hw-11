@@ -1,6 +1,6 @@
 # goit-js-hw-11
 
-## Gh-page(https://serg-rsv.github.io/goit-js-hw-11)
+## [Gh-page](https://serg-rsv.github.io/goit-js-hw-11)
 
 ### Задание - поиск изображений. В качестве бэкенда публичный API сервиса [Pixabay](https://pixabay.com/api/docs/)
 
