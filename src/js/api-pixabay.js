@@ -36,14 +36,8 @@ export default class PixabayApiService {
 
       this.#numOfResults = data.totalHits;
       this.page += 1;
-      // if (this.#numOfResults > 0) {
+
       return data.hits;
-      //   .map(
-      //   ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
-      //     return { webformatURL, largeImageURL, tags, likes, views, comments, downloads };
-      //   }
-      // );
-      // }
     });
   }
   /**
