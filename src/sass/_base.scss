@@ -11,3 +11,21 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+  margin-right: -16px;
+}
+
+.photo-card {
+  max-width: calc((100vw - 5 * 16px) / 4);
+  margin-right: 16px;
+}
+
+.photo-card img {
+  max-width: inherit;
+  height: 200px;
+  object-fit: cover;
+}
