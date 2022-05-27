@@ -6,6 +6,7 @@ const API_KEY = '27629620-bf8dbf1d2d77ad53435eb2e20';
 export default class PixabayApiService {
   #totalHits;
   #searchQuery;
+  #lastPage = true;
 
   constructor() {
     this.#searchQuery = '';
@@ -35,10 +36,19 @@ export default class PixabayApiService {
       console.log(data);
 
       this.#numOfResults = data.totalHits;
+
+      this.#lastPage = Math.ceil(this.numOfResults / this.perPage) === this.page ? true : false;
       this.page += 1;
 
       return data.hits;
     });
+  }
+  /**
+   *
+   * @returns true if reach last page of total results.
+   */
+  isLastPage() {
+    return this.#lastPage;
   }
   /**
    * Set request parameter 'page' to 1.
