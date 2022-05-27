@@ -32,11 +32,7 @@ export default class PixabayApiService {
     };
 
     return axios.get(BASE_URL, { params: reqParams }).then(({ data }) => {
-      console.log(this);
-      console.log(data);
-
       this.#numOfResults = data.totalHits;
-
       this.#lastPage = Math.ceil(this.numOfResults / this.perPage) === this.page ? true : false;
       this.page += 1;
 

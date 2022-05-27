@@ -7,3 +7,23 @@
 .center.btn-wrap {
   margin-bottom: 32px;
 }
+
+[data-action='load-more'] {
+  cursor: pointer;
+
+  padding: 8px 16px;
+
+  border: none;
+  border-radius: 4px;
+  outline: none;
+
+  color: antiquewhite;
+  background-color: royalblue;
+
+  transition: box-shadow 200ms, transform 200ms;
+}
+
+[data-action='load-more']:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px -5px gray;
+}

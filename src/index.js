@@ -23,12 +23,14 @@ function onSubmit(e) {
   myPixabay.query = e.currentTarget.elements.searchQuery.value;
   myPixabay.resetPage();
   refs.gallery.innerHTML = '';
+  refs.searchForm.reset();
 
   fetchAndRenderImgs();
 }
 
-function onLoadMore() {
-  fetchAndRenderImgs();
+async function onLoadMore() {
+  await fetchAndRenderImgs();
+  smoothScroll();
 }
 
 function renderImgCards(imgs) {
@@ -42,7 +44,7 @@ async function fetchAndRenderImgs() {
     if (myPixabay.numOfResults === 0) {
       refs.gallery.innerHTML = '';
       refs.loadMoreBtn.classList.add('is-hidden');
-      throw 'Sorry, there are no images matching your search query. Please try again.';
+      throw new Error('Sorry, there are no images matching your search query. Please try again.');
     }
 
     Notify.info(`Hooray! We found ${myPixabay.numOfResults} images.`);
@@ -56,7 +58,16 @@ async function fetchAndRenderImgs() {
 
     renderImgCards(imgs);
     simplelightbox.refresh();
-  } catch (msg) {
-    Notify.failure(msg);
+  } catch (error) {
+    Notify.failure(error.message);
   }
+}
+
+function smoothScroll() {
+  const { height: cardHeight } = refs.gallery.firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
 }

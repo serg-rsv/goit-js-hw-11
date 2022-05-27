@@ -1,9 +1,33 @@
 .form-wrap {
   position: fixed;
+  z-index: 10;
 
   width: 100vw;
   height: 48px;
 
   background-color: royalblue;
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.search-form input {
+  border: none;
+  border-radius: 4px;
+
+  outline: none;
+
+  padding: 4px 24px 4px 4px;
+}
+
+.search-form button {
+  cursor: pointer;
+
+  padding: 4px;
+
+  border: none;
+  border-radius: 0 4px 4px 0;
+
+  transform: translateX(-100%);
+
+  color: royalblue;
+  background-color: whitesmoke;
 }
