@@ -23,7 +23,7 @@
   transition: box-shadow 200ms, transform 200ms;
 }
 
-[data-action='load-more']:hover {
+.btn-load-more:hover {
   transform: scale(1.1);
   box-shadow: 0 5px 10px -5px gray;
 }
