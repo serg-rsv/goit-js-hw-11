@@ -20,6 +20,7 @@ refs.loadMoreBtn.addEventListener('click', onLoadMore);
 function onSubmit(e) {
   e.preventDefault();
 
+  refs.loadMoreBtn.classList.add('is-hidden');
   myPixabay.query = e.currentTarget.elements.searchQuery.value;
   myPixabay.resetPage();
   refs.gallery.innerHTML = '';
@@ -43,7 +44,6 @@ async function fetchAndRenderImgs() {
 
     if (myPixabay.numOfResults === 0) {
       refs.gallery.innerHTML = '';
-      refs.loadMoreBtn.classList.add('is-hidden');
       throw new Error('Sorry, there are no images matching your search query. Please try again.');
     }
 
