@@ -1,4 +1,5 @@
 # goit-js-hw-11
+CRUD. Async/await.
 
 ## [Gh-page](https://serg-rsv.github.io/goit-js-hw-11)
 
